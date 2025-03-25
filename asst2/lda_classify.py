@@ -99,8 +99,8 @@ def get_docs_words(all_docs):
 
 if __name__ == "__main__":
 
-    mode_type = ['word']
-    token_length_type = [3000]
+    mode_type = ['char','word']
+    token_length_type = [20, 100, 500, 1000,3000]
     num_topic_T_type = [5, 10, 15, 20, 25]
 
 
@@ -132,13 +132,13 @@ if __name__ == "__main__":
                 result += f"Average cross-validation score: {scores.mean()}\n"
 
                 # 将结果写入文件
-                with open('output.txt', 'a', encoding='utf-8') as file:
-                    file.write(result)
+                # with open('output.txt', 'a', encoding='utf-8') as file:
+                #     file.write(result)
 
-                # 绘制热图
-                # plt.figure(figsize=(10, 8))
-                # sns.heatmap(doc_topic_matrix[:10], annot=True, cmap='viridis',xticklabels=[f'Topic_{i + 1}' for i in range(num_topic_T)],)
-                # plt.title('文档 - 主题分布热图')
-                # plt.xlabel('主题')
-                # plt.ylabel('文档')
-                # plt.show()
+                #绘制热图
+                plt.figure(figsize=(10, 8))
+                sns.heatmap(doc_topic_matrix[:10], annot=True, cmap='viridis',xticklabels=[f'Topic_{i + 1}' for i in range(num_topic_T)],)
+                plt.title('文档 - 主题分布热图')
+                plt.xlabel('主题')
+                plt.ylabel('文档')
+                plt.show()
