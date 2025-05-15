@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跑酷冒险</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="background">
+            <div class="clouds"></div>
+            <div class="mountains"></div>
+        </div>
+        <div class="menu" id="menu">
+            <h1>跑酷冒险</h1>
+            <button id="startButton">开始游戏</button>
+            <p>按空格键跳跃</p>
+            <div class="score-display">最高分: <span id="highScore">0</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-over" id="gameOver">
+            <h2>游戏结束</h2>
+            <p>得分: <span id="finalScore">0</span></p>
+            <button id="restartButton">重新开始</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
